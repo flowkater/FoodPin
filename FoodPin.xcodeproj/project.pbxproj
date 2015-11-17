@@ -13,6 +13,8 @@
 		02B6AF771BFA1E9400668BDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02B6AF751BFA1E9400668BDC /* LaunchScreen.storyboard */; };
 		02B6AF7F1BFA24AC00668BDC /* RestaurantTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B6AF7E1BFA24AC00668BDC /* RestaurantTableTableViewController.swift */; };
 		02DA85EF1BFA2F84001C7BC7 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA85EE1BFA2F84001C7BC7 /* RestaurantTableViewCell.swift */; };
+		02E432411BFB0C9400613226 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E432401BFB0C9400613226 /* RestaurantDetailViewController.swift */; };
+		02E432431BFB10FB00613226 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E432421BFB10FB00613226 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		02B6AF781BFA1E9400668BDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02B6AF7E1BFA24AC00668BDC /* RestaurantTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableTableViewController.swift; sourceTree = "<group>"; };
 		02DA85EE1BFA2F84001C7BC7 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		02E432401BFB0C9400613226 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		02E432421BFB10FB00613226 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				02B6AF751BFA1E9400668BDC /* LaunchScreen.storyboard */,
 				02B6AF781BFA1E9400668BDC /* Info.plist */,
 				02DA85EE1BFA2F84001C7BC7 /* RestaurantTableViewCell.swift */,
+				02E432401BFB0C9400613226 /* RestaurantDetailViewController.swift */,
+				02E432421BFB10FB00613226 /* Restaurant.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E432431BFB10FB00613226 /* Restaurant.swift in Sources */,
 				02B6AF6D1BFA1E9400668BDC /* AppDelegate.swift in Sources */,
 				02DA85EF1BFA2F84001C7BC7 /* RestaurantTableViewCell.swift in Sources */,
+				02E432411BFB0C9400613226 /* RestaurantDetailViewController.swift in Sources */,
 				02B6AF7F1BFA24AC00668BDC /* RestaurantTableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
