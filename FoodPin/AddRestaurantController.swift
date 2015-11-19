@@ -16,19 +16,14 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     @IBOutlet var yesButton:UIButton!
     @IBOutlet var noButton:UIButton!
     
+    var isVisited = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -53,60 +48,43 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
         
         dismissViewControllerAnimated(true, completion: nil)
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+    
+    @IBAction func save(){
+        if nameTextField.text == "" {
+            alertValidationMessage()
+        } else if typeTextField.text == "" {
+            alertValidationMessage()
+        } else if locationTextField.text == "" {
+            alertValidationMessage()
+        } else {
+            print("Name: \(nameTextField.text)")
+            print("Type: \(typeTextField.text)")
+            print("Location: \(locationTextField.text)")
+            print("Have you been here: \(isVisited)")
+            
+            
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        
 
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func alertValidationMessage(){
+        let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required.", preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func toggleBeenHereButton(sender:UIButton){
+        if sender == yesButton {
+            isVisited = true
+            yesButton.backgroundColor = UIColor.redColor()
+            noButton.backgroundColor = UIColor.lightGrayColor()
+        } else if sender == noButton {
+            isVisited = false
+            yesButton.backgroundColor = UIColor.lightGrayColor()
+            noButton.backgroundColor = UIColor.redColor()
+        }
     }
-    */
-
+    
 }

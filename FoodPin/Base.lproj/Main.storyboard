@@ -319,6 +319,9 @@
                                                     </constraints>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="YES"/>
+                                                    <connections>
+                                                        <action selector="toggleBeenHereButton:" destination="8C1-42-JDZ" eventType="touchUpInside" id="Fmc-kO-Onl"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Uw-GR-nvn">
                                                     <rect key="frame" x="67" y="33" width="46" height="26"/>
@@ -329,6 +332,9 @@
                                                     </constraints>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="No"/>
+                                                    <connections>
+                                                        <action selector="toggleBeenHereButton:" destination="8C1-42-JDZ" eventType="touchUpInside" id="kqy-lt-FWg"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <animations/>
@@ -363,6 +369,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="79S-2S-rtY">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="save" destination="8C1-42-JDZ" id="Cyy-kA-Hdw"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
