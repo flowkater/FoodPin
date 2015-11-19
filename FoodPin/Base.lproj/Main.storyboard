@@ -157,7 +157,7 @@
         <!--New Restaurant-->
         <scene sceneID="as6-ys-K5A">
             <objects>
-                <tableViewController id="8C1-42-JDZ" sceneMemberID="viewController">
+                <tableViewController id="8C1-42-JDZ" customClass="AddRestaurantController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QWh-7C-dtJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,19 +173,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="249"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="e3C-ss-Aoc">
-                                                    <rect key="frame" x="270" y="95" width="60" height="60"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="e3C-ss-Aoc">
+                                                    <rect key="frame" x="0.0" y="-1" width="600" height="250"/>
                                                     <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="KwL-By-yoz"/>
-                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="e3C-ss-Aoc" firstAttribute="top" secondItem="A4S-4W-GoD" secondAttribute="topMargin" constant="87" id="3ni-WH-c9Z"/>
-                                                <constraint firstItem="e3C-ss-Aoc" firstAttribute="centerX" secondItem="A4S-4W-GoD" secondAttribute="centerX" id="BaD-sa-bvF"/>
-                                                <constraint firstItem="e3C-ss-Aoc" firstAttribute="centerY" secondItem="A4S-4W-GoD" secondAttribute="centerY" id="yUh-Gv-pyQ"/>
+                                                <constraint firstItem="e3C-ss-Aoc" firstAttribute="leading" secondItem="A4S-4W-GoD" secondAttribute="leading" id="7Zm-nC-gWj"/>
+                                                <constraint firstAttribute="bottom" secondItem="e3C-ss-Aoc" secondAttribute="bottom" id="7hW-NZ-zWz"/>
+                                                <constraint firstItem="e3C-ss-Aoc" firstAttribute="centerY" secondItem="A4S-4W-GoD" secondAttribute="centerY" id="HRm-wK-RO8"/>
+                                                <constraint firstAttribute="trailing" secondItem="e3C-ss-Aoc" secondAttribute="trailing" id="oSw-Fw-scB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -363,7 +361,18 @@
                                 <segue destination="o6p-6y-D9j" kind="unwind" unwindAction="unwindToHomeScreen:" id="Pat-Et-AaN"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="79S-2S-rtY">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="e3C-ss-Aoc" id="kRK-MU-isQ"/>
+                        <outlet property="locationTextField" destination="tgg-Y4-oJm" id="f9i-o4-e1b"/>
+                        <outlet property="nameTextField" destination="faE-SH-NkP" id="dwK-vH-z9Z"/>
+                        <outlet property="noButton" destination="8Uw-GR-nvn" id="FJp-7w-Nvf"/>
+                        <outlet property="typeTextField" destination="UeE-W1-Sha" id="MYw-95-woc"/>
+                        <outlet property="yesButton" destination="SSB-n8-jn9" id="Ngr-5b-pdo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0J-t4-WJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="o6p-6y-D9j" userLabel="Exit" sceneMemberID="exit"/>
