@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     NSFontAttributeName:barFont]
         }
         
+        UITabBar.appearance().tintColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        UITabBar.appearance().selectionIndicatorImage = UIImage(named: "tabitem-selected")
+        
         return true
     }
 
