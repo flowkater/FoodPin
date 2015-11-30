@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class AddRestaurantController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var imageView:UIImageView!
     @IBOutlet var nameTextField:UITextField!
     @IBOutlet var typeTextField:UITextField!
     @IBOutlet var locationTextField:UITextField!
+    @IBOutlet var phoneNumberTextField:UITextField!
     @IBOutlet var yesButton:UIButton!
     @IBOutlet var noButton:UIButton!
+    
+    var restaurant:Restaurant!
     
     var isVisited = true
     
@@ -50,11 +54,16 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     }
     
     @IBAction func save(){
-        if nameTextField.text == "" {
+        let name = nameTextField.text
+        let type = typeTextField.text
+        let location = locationTextField.text
+        let phoneNumber = phoneNumberTextField.text
+        
+        if name == "" {
             alertValidationMessage()
-        } else if typeTextField.text == "" {
+        } else if type == "" {
             alertValidationMessage()
-        } else if locationTextField.text == "" {
+        } else if location == "" {
             alertValidationMessage()
         } else {
             print("Name: \(nameTextField.text)")
@@ -62,7 +71,26 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
             print("Location: \(locationTextField.text)")
             print("Have you been here: \(isVisited)")
             
-            
+            if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext{
+                restaurant =
+                NSEntityDescription.insertNewObjectForEntityForName("Restaurant", inManagedObjectContext: managedObjectContext) as! Restaurant
+                restaurant.name = name!
+                restaurant.type = type!
+                restaurant.location = location!
+                restaurant.phoneNumber = phoneNumber!
+                if let restaurantImage = imageView.image {
+                    restaurant.image = UIImagePNGRepresentation(restaurantImage)
+                }
+                restaurant.isVisited = isVisited
+                
+                do {
+                    try managedObjectContext.save()
+                    print("success")
+                } catch {
+                    print(error)
+                    return
+                }
+            }
             dismissViewControllerAnimated(true, completion: nil)
         }
         
