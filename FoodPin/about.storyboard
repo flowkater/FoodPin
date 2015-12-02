@@ -8,19 +8,34 @@
         <!--About-->
         <scene sceneID="RXk-u4-Oag">
             <objects>
-                <tableViewController id="FQu-La-Iqw" sceneMemberID="viewController">
+                <tableViewController id="FQu-La-Iqw" customClass="AboutTableViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z8x-9r-slF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about-logo" id="qBc-k4-et3">
+                            <rect key="frame" x="0.0" y="64" width="600" height="170"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                        </imageView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LhC-TZ-4cq">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="bM1-UR-Lfw" style="IBUITableViewCellStyleDefault" id="LhC-TZ-4cq">
+                                <rect key="frame" x="0.0" y="262" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LhC-TZ-4cq" id="LeD-gS-Y9b">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bM1-UR-Lfw">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
@@ -32,10 +47,48 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="About" id="x6f-j7-10W"/>
+                    <connections>
+                        <segue destination="UvR-26-DQ6" kind="show" identifier="showWebView" id="Tj7-k2-9iI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBs-xt-O5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2459" y="-380"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="3p3-3B-mzu">
+            <objects>
+                <viewController id="UvR-26-DQ6" customClass="WebViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x7p-Wm-fAf"/>
+                        <viewControllerLayoutGuide type="bottom" id="aLE-6H-cXo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMV-B6-nP9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHC-me-J3N">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jHC-me-J3N" firstAttribute="bottom" secondItem="aLE-6H-cXo" secondAttribute="top" id="56s-05-fAw"/>
+                            <constraint firstAttribute="trailing" secondItem="jHC-me-J3N" secondAttribute="trailing" id="9dD-yD-WAQ"/>
+                            <constraint firstItem="jHC-me-J3N" firstAttribute="top" secondItem="zMV-B6-nP9" secondAttribute="top" id="KRd-IN-7uT"/>
+                            <constraint firstItem="jHC-me-J3N" firstAttribute="leading" secondItem="zMV-B6-nP9" secondAttribute="leading" id="Zio-Z7-imr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="jHC-me-J3N" id="g3J-Cd-1Im"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmi-jw-IS9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3139" y="-380"/>
         </scene>
         <!--About-->
         <scene sceneID="aJw-Er-WNZ">
@@ -59,5 +112,6 @@
     </scenes>
     <resources>
         <image name="about" width="25" height="25"/>
+        <image name="about-logo" width="485" height="200"/>
     </resources>
 </document>
